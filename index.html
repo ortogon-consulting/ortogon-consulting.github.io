@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=/en/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ortogon</title>
+
+  <script>
+    (function () {
+      try {
+        var langs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
+        var prefersFrench = langs.some(function (l) {
+          return l.toLowerCase().startsWith('fr');
+        });
+
+        if (prefersFrench) {
+          window.location.replace('/fr/');
+        } else {
+          window.location.replace('/en/');
+        }
+      } catch (e) {
+        // Fallback: always English
+        window.location.replace('/en/');
+      }
+    })();
+  </script>
+
+  <!-- Safety fallback if JS is disabled -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/en/">
+  </noscript>
+</head>
+<body>
+</body>
+</html>
