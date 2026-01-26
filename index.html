@@ -6,13 +6,14 @@
 
   <title>Ortogon</title>
 
+  <!-- Google Search Console verification -->
+  <meta name="google-site-verification" content="google30fdd7ff6c5705f1" />
+
   <!-- Root page is only a language router: do not index it -->
   <meta name="robots" content="noindex,follow" />
-
-  <!-- Optional: explicitly tell crawlers not to treat this as canonical content -->
   <meta name="googlebot" content="noindex,follow" />
 
-  <!-- Hreflang signals (keep these consistent with /en/ and /fr/) -->
+  <!-- Hreflang signals -->
   <link rel="alternate" hreflang="en" href="https://www.ortogon.ch/en/" />
   <link rel="alternate" hreflang="fr" href="https://www.ortogon.ch/fr/" />
   <link rel="alternate" hreflang="x-default" href="https://www.ortogon.ch/" />
@@ -39,7 +40,6 @@
   <script>
     (function () {
       function go(path) {
-        // Use replace to avoid polluting history
         window.location.replace(path);
       }
 
@@ -56,15 +56,13 @@
     })();
   </script>
 
-  <noscript>
-    <!-- If JS is disabled, do NOT meta-refresh instantly.
-         Provide clickable links so crawlers/users can follow. -->
-  </noscript>
+  <noscript></noscript>
 </head>
 
 <body>
   <main class="wrap" role="main" aria-label="Language selection">
     <h1 style="margin:0; font-size:20px; font-weight:600;">Ortogon</h1>
+
     <p class="muted" style="margin-bottom:0;">
       Choose your language / Choisissez votre langue
     </p>
@@ -80,3 +78,4 @@
   </main>
 </body>
 </html>
+
