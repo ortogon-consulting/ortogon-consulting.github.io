@@ -1,36 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=/en/">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Ortogon</title>
+
+  <!-- Root page is only a language router: do not index it -->
+  <meta name="robots" content="noindex,follow" />
+
+  <!-- Optional: explicitly tell crawlers not to treat this as canonical content -->
+  <meta name="googlebot" content="noindex,follow" />
+
+  <!-- Hreflang signals (keep these consistent with /en/ and /fr/) -->
+  <link rel="alternate" hreflang="en" href="https://www.ortogon.ch/en/" />
+  <link rel="alternate" hreflang="fr" href="https://www.ortogon.ch/fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.ortogon.ch/" />
+
+  <!-- Small UX: avoid a blank screen if redirect is delayed -->
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.35;
+      color: #111;
+      background: #fff;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 560px; padding: 28px; text-align: center; }
+    .muted { color: #555; font-size: 14px; margin-top: 10px; }
+    .links { margin-top: 18px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  </style>
 
   <script>
     (function () {
+      function go(path) {
+        // Use replace to avoid polluting history
+        window.location.replace(path);
+      }
+
       try {
         var langs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
-        var prefersFrench = langs.some(function (l) {
-          return l.toLowerCase().startsWith('fr');
+        var prefersFrench = Array.prototype.some.call(langs, function (l) {
+          return String(l || '').toLowerCase().startsWith('fr');
         });
 
-        if (prefersFrench) {
-          window.location.replace('/fr/');
-        } else {
-          window.location.replace('/en/');
-        }
+        go(prefersFrench ? '/fr/' : '/en/');
       } catch (e) {
-        // Fallback: always English
-        window.location.replace('/en/');
+        go('/en/');
       }
     })();
   </script>
 
-  <!-- Safety fallback if JS is disabled -->
   <noscript>
-    <meta http-equiv="refresh" content="0; url=/en/">
+    <!-- If JS is disabled, do NOT meta-refresh instantly.
+         Provide clickable links so crawlers/users can follow. -->
   </noscript>
 </head>
+
 <body>
+  <main class="wrap" role="main" aria-label="Language selection">
+    <h1 style="margin:0; font-size:20px; font-weight:600;">Ortogon</h1>
+    <p class="muted" style="margin-bottom:0;">
+      Choose your language / Choisissez votre langue
+    </p>
+
+    <div class="links" aria-label="Language links">
+      <a href="/en/">English</a>
+      <a href="/fr/">Français</a>
+    </div>
+
+    <p class="muted">
+      If you are not redirected automatically, use the links above.
+    </p>
+  </main>
 </body>
 </html>
