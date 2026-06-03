@@ -17,4 +17,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ortogon.ch/" />
   </url>
 
+  <url>
+    <loc>https://www.ortogon.ch/succession-diagnostic/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ortogon.ch/succession-diagnostic/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ortogon.ch/fr/succession-diagnostic.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ortogon.ch/succession-diagnostic/" />
+  </url>
+
+  <url>
+    <loc>https://www.ortogon.ch/fr/succession-diagnostic.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ortogon.ch/fr/succession-diagnostic.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ortogon.ch/succession-diagnostic/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ortogon.ch/succession-diagnostic/" />
+  </url>
+
+  <url>
+    <loc>https://www.ortogon.ch/en/succession-diagnostic-questionnaire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ortogon.ch/en/succession-diagnostic-questionnaire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ortogon.ch/en/succession-diagnostic-questionnaire.html" />
+  </url>
+
 </urlset>
