@@ -22,12 +22,12 @@
   <meta property="og:title" content="Family Business Succession Risk Snapshot | Ortogon" />
   <meta property="og:description" content="A free 7-minute survey for family business owners, shareholders and boards." />
   <meta property="og:url" content="https://ortogon.ch/succession-diagnostic/" />
-  <meta property="og:image" content="https://ortogon.ch/Succession%20Diagnostic%20(FR).png" />
+  <meta property="og:image" content="https://ortogon.ch/Succession%20Diagnostic%20(EN).png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Family Business Succession Risk Snapshot | Ortogon" />
   <meta name="twitter:description" content="Identify where your succession risk sits before it becomes a problem." />
-  <meta name="twitter:image" content="https://ortogon.ch/Succession%20Diagnostic%20(FR).png" />
+  <meta name="twitter:image" content="https://ortogon.ch/Succession%20Diagnostic%20(EN).png" />
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -68,7 +68,7 @@
       background-image:
         linear-gradient(90deg, rgba(4, 8, 12, 0.92) 0%, rgba(4, 8, 12, 0.82) 26%, rgba(4, 8, 12, 0.34) 56%, rgba(4, 8, 12, 0.10) 100%),
         linear-gradient(180deg, rgba(4, 8, 12, 0.10) 0%, rgba(4, 8, 12, 0.20) 72%, rgba(4, 8, 12, 0.65) 100%),
-        url("../Succession%20Diagnostic%20(FR).png");
+        url("../Succession%20Diagnostic%20(EN).png");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -327,16 +327,20 @@
       flex: 0 0 auto;
     }
 
-    .survey-button-source {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
+    .secure-note {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.45rem;
+      color: var(--text-dark);
+      font-size: 0.82rem;
+      line-height: 1.2;
+    }
+
+    .secure-note svg {
+      width: 0.9rem;
+      height: 0.9rem;
     }
 
     .sr-only {
@@ -381,6 +385,7 @@
       .promise p { font-size: 0.82rem; line-height: 1.25; }
       .cta-area { padding-top: 0.55rem; padding-bottom: 0.55rem; }
       .cta-button { min-height: 3rem; font-size: clamp(0.88rem, 1.1vw, 1.05rem); }
+      .secure-note { margin-top: 0.32rem; font-size: 0.72rem; }
     }
 
     @media (min-width: 1101px) {
@@ -457,6 +462,7 @@
       .promise p { font-size: 0.76rem; line-height: 1.22; }
       .cta-area { padding-top: 0.48rem; padding-bottom: 0.42rem; }
       .cta-button { min-height: 2.85rem; padding: 0.62rem 1.15rem; font-size: clamp(0.82rem, 1.03vw, 1.02rem); }
+      .secure-note { margin-top: 0.28rem; font-size: 0.66rem; }
     }
 
     @media (min-width: 1101px) and (max-height: 720px) {
@@ -474,6 +480,7 @@
       .snapshot-item p { font-size: 0.62rem; line-height: 1.04; }
       .assurance span, .promise p { font-size: 0.7rem; }
       .cta-button { min-height: 2.55rem; font-size: 0.82rem; }
+      .secure-note { font-size: 0.62rem; }
     }
 
     @media (max-width: 1100px) {
@@ -490,7 +497,7 @@
         overflow: visible;
         background-image:
           linear-gradient(180deg, rgba(4, 8, 12, 0.93) 0%, rgba(4, 8, 12, 0.88) 45%, rgba(4, 8, 12, 0.72) 100%),
-          url("../Succession%20Diagnostic%20(FR).png");
+          url("../Succession%20Diagnostic%20(EN).png");
         background-position: 63% center;
       }
 
@@ -512,53 +519,53 @@
 <body>
   <div class="page">
     <header class="site-header">
-      <a class="brand" href="/fr/" aria-label="Retour à l’accueil Ortogon">
+      <a class="brand" href="/en/" aria-label="Back to Ortogon home">
         <img src="../logo.png" alt="Ortogon" />
       </a>
 
-      <nav class="lang-toggle" aria-label="Sélecteur de langue">
-        <a href="/succession-diagnostic/" lang="en">EN</a>
+      <nav class="lang-toggle" aria-label="Language selector">
+        <a class="active" href="/succession-diagnostic/" aria-current="page">EN</a>
         <span>/</span>
-        <a class="active" href="/fr/succession-diagnostic.html" aria-current="page">FR</a>
+        <a href="/fr/succession-diagnostic.html" lang="fr">FR</a>
       </nav>
     </header>
 
     <main class="hero" aria-labelledby="page-title">
       <div class="hero-content">
-        <p class="eyebrow">Diagnostic de succession d’entreprise familiale</p>
-        <h1 id="page-title">Identifiez où votre succession risque de se fragiliser en premier.</h1>
+        <p class="eyebrow">Family Business Succession Survey</p>
+        <h1 id="page-title">Identify where your succession risk sits before it becomes a problem.</h1>
         <div class="rule" aria-hidden="true"></div>
-        <p class="subhead">Un diagnostic gratuit de 7 minutes pour dirigeants, actionnaires et conseils.</p>
-        <p class="intro">La plupart des transmissions n’échouent pas pour des raisons fiscales, juridiques ou de valorisation.<span class="intro-break">Elles se fragilisent lorsque les familles confondent <strong>amour, propriété, compétence, contrôle</strong> et <strong>équité</strong>.</span></p>
+        <p class="subhead">A free 7-minute survey for family business owners, shareholders and boards.</p>
+        <p class="intro">Most succession failures don’t start with tax, legal or valuation issues.<span class="intro-break">They start when families confuse <strong>love, ownership, competence, control</strong> and <strong>fairness</strong>.</span></p>
       </div>
     </main>
 
     <section class="snapshot-panel" aria-labelledby="snapshot-includes">
-      <h2 class="snapshot-title" id="snapshot-includes">Votre instantané des risques de succession inclut :</h2>
+      <h2 class="snapshot-title" id="snapshot-includes">Your Succession Risk Snapshot includes:</h2>
       <div class="snapshot-grid">
         <div class="snapshot-item">
           <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 40V26h6v14H8Zm13 0V16h6v24h-6Zm13 0V8h6v32h-6Z" stroke="currentColor" stroke-width="2.4"/></svg>
-          <p>Score global de clarté de succession</p>
+          <p>Overall Succession Clarity Score</p>
         </div>
         <div class="snapshot-item">
           <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2.4"/><rect x="29" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2.4"/><rect x="8" y="29" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2.4"/><rect x="29" y="29" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2.4"/></svg>
-          <p>Cartographie des risques par dimension clé</p>
+          <p>Risk heatmap across key dimensions</p>
         </div>
         <div class="snapshot-item">
           <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 8 43 40H5L24 8Z" stroke="currentColor" stroke-width="2.4"/><path d="M24 18v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="35" r="1.6" fill="currentColor"/></svg>
-          <p>Top 3 vulnérabilités et signaux d’alerte</p>
+          <p>Top 3 vulnerabilities and red flags</p>
         </div>
         <div class="snapshot-item">
           <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M10 14c0-4 4.2-7 14-7s14 3 14 11c0 7.5-5.8 11-14 11h-4l-8 6 2-8c-2.7-2.2-4-5.2-4-9Z" stroke="currentColor" stroke-width="2.4"/><path d="M18 18h.1M24 18h.1M30 18h.1" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-          <p>Lecture de la conversation évitée</p>
+          <p>Insight into the avoided conversation</p>
         </div>
         <div class="snapshot-item">
           <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M16 8h16l3 5h5v29H8V13h5l3-5Z" stroke="currentColor" stroke-width="2.4"/><path d="M17 24l4 4 9-10M17 35l4 4 9-10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <p>Prochaines étapes recommandées</p>
+          <p>Recommended next steps</p>
         </div>
         <div class="snapshot-item">
           <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="9" y="10" width="30" height="30" rx="2" stroke="currentColor" stroke-width="2.4"/><path d="M16 6v8M32 6v8M9 18h30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M17 25h3M23 25h3M29 25h3M17 32h3M23 32h3M29 32h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          <p>Ordre du jour pour une discussion confidentielle</p>
+          <p>Suggested agenda for a confidential discussion</p>
         </div>
       </div>
     </section>
@@ -566,41 +573,18 @@
     <footer class="bottom-bar">
       <div class="assurance">
         <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 5 41 12v12c0 10.8-7.2 16.7-17 20-9.8-3.3-17-9.2-17-20V12l17-7Z" stroke="currentColor" stroke-width="2.3"/><rect x="17" y="22" width="14" height="11" rx="1.5" stroke="currentColor" stroke-width="2.3"/><path d="M20 22v-4a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2.3"/></svg>
-        <p><strong>Confidentiel. Sans engagement.</strong><span>Indicatif uniquement. Ne constitue pas un conseil juridique, fiscal, patrimonial ou d’investissement.</span></p>
+        <p><strong>Confidential. No commitment.</strong><span>Indicative only and not legal, tax, investment, or estate-planning advice.</span></p>
       </div>
       <div class="promise">
-        <p>Comprendre les vrais risques. Engager les bonnes conversations.<br />Construire une transition qui protège l’entreprise, la famille et l’héritage.</p>
+        <p>Understand the real risks. Start the right conversations.<br />Design a transition that protects your business, your family and your legacy.</p>
       </div>
       <div class="cta-area">
-        <a class="cta-button" href="https://www.surveymonkey.com/r/CWVKFNZ" target="_blank" rel="noopener" data-survey-launch="fr">
-          <span>Commencer le diagnostic de 7 minutes</span>
+        <a class="cta-button" href="/en/succession-diagnostic-questionnaire.html" target="_blank" rel="noopener">
+          <span>Start the 7-minute survey</span>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <div class="survey-button-source" aria-hidden="true">
-          <script>(function(t,e,s,o){var n,a,c;t.SMCX=t.SMCX||[],e.getElementById(o)||(n=e.getElementsByTagName(s),a=n[n.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=o,c.src="https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd1caHSCpdmdgZgGo5Fq6bqqbXk17e2ffMpMVHgi_2BpbKg.js",a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>
-        </div>
       </div>
     </footer>
   </div>
-  <script>
-    (function () {
-      function findSurveyTrigger() {
-        var hiddenSource = document.querySelector('.survey-button-source');
-        if (!hiddenSource) return null;
-        return hiddenSource.querySelector('button, a, [role="button"], iframe');
-      }
-
-      document.addEventListener('click', function (event) {
-        var launchLink = event.target.closest('[data-survey-launch="fr"]');
-        if (!launchLink) return;
-
-        var trigger = findSurveyTrigger();
-        if (!trigger) return;
-
-        event.preventDefault();
-        trigger.click();
-      });
-    })();
-  </script>
 </body>
 </html>

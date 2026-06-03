@@ -7,7 +7,7 @@
 
   <title>Family Business Succession Risk Snapshot | Ortogon</title>
 
-  <meta name="description" content="Complete Ortogon’s family business succession diagnostic in a clean embedded format." />
+  <meta name="description" content="Complete Ortogon's family business succession diagnostic in a clean embedded format." />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <link rel="canonical" href="https://ortogon.ch/en/succession-diagnostic-questionnaire.html" />
 
@@ -18,18 +18,22 @@
   <meta property="og:locale" content="en_CH" />
   <meta property="og:site_name" content="Ortogon" />
   <meta property="og:title" content="Family Business Succession Risk Snapshot | Ortogon" />
-  <meta property="og:description" content="Complete Ortogon’s family business succession diagnostic in a clean embedded format." />
+  <meta property="og:description" content="Complete Ortogon's family business succession diagnostic in a clean embedded format." />
   <meta property="og:url" content="https://ortogon.ch/en/succession-diagnostic-questionnaire.html" />
   <meta property="og:image" content="https://ortogon.ch/portrait.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Family Business Succession Risk Snapshot | Ortogon" />
-  <meta name="twitter:description" content="Complete Ortogon’s family business succession diagnostic in a clean embedded format." />
+  <meta name="twitter:description" content="Complete Ortogon's family business succession diagnostic in a clean embedded format." />
   <meta name="twitter:image" content="https://ortogon.ch/portrait.jpg" />
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :root { --ink: #111111; --muted: #5f5f5f; --soft: #8a8a8a; --rule: #e8e8e8; }
+    html,
+    body {
+      overflow-x: hidden;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
       background: #ffffff;
@@ -50,7 +54,11 @@
       outline-offset: 3px;
       border-bottom-color: transparent;
     }
-    .page { min-height: 100vh; padding: 2rem 1.5rem 4rem; }
+    .page {
+      min-height: 100vh;
+      padding: 2rem 1.5rem 4rem;
+      overflow-x: hidden;
+    }
     .site-header {
       max-width: 1040px;
       margin: 0 auto 4rem;
@@ -112,25 +120,66 @@
       margin: 2.5rem auto 0;
       padding-top: 1rem;
       border-top: 1px solid var(--rule);
+      overflow: visible;
     }
-    .survey-shell { width: 100%; }
+    .survey-shell {
+      width: 100%;
+      overflow: visible;
+      position: relative;
+    }
+    .survey-shell > a[href="https://www.surveymonkey.com"],
+    .survey-shell a[href="https://www.surveymonkey.com"] {
+      display: none !important;
+    }
+    .survey-shell iframe,
+    .survey-shell div,
+    .survey-shell section {
+      max-width: 100% !important;
+    }
     .survey-shell iframe {
       width: 100% !important;
-      min-height: 3600px !important;
+      min-height: 4200px !important;
+      height: 4200px !important;
       border: 0 !important;
-      display: block;
+      display: block !important;
+      overflow: visible !important;
     }
-    .survey-shell script + a,
-    .survey-shell > a[href="https://www.surveymonkey.com"] {
-      display: inline-block;
-      margin-top: 1rem;
-      font: 12px Helvetica, sans-serif;
-      color: #999999;
-      text-decoration: none;
-      border-bottom: none;
+    .mobile-survey-fallback {
+      display: none;
+      margin-top: 0.25rem;
+      padding: 0;
     }
+    .mobile-survey-fallback p {
+      max-width: none;
+      margin-bottom: 1rem;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0.9rem 1.4rem;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.98rem;
+      letter-spacing: 0.01em;
+      text-align: center;
+    }
+    .cta-button:hover { opacity: 0.88; border-bottom-color: var(--ink); }
+    .disclaimer-block { margin-top: 2.5rem; }
+
     @media (max-width: 700px) {
-      .page { padding: 1.25rem 1.1rem 3rem; }
+      .page {
+        padding: 1.25rem 0 3rem;
+      }
+      .site-header,
+      .intro,
+      .disclaimer-block {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+      }
       .site-header {
         margin-bottom: 3rem;
         flex-direction: column;
@@ -139,9 +188,25 @@
       }
       .brand-block img { width: 124px; }
       .lang-toggle { font-size: 0.82rem; }
-      .survey-wrap { margin-top: 2rem; padding-top: 0.85rem; }
-      .survey-shell iframe { min-height: 3200px !important; }
+      .survey-wrap {
+        width: 100vw;
+        max-width: none;
+        margin: 2rem 0 0;
+        padding: 0;
+        border-top: 0;
+        overflow: visible;
+      }
+      .survey-shell {
+        display: none;
+      }
+      .mobile-survey-fallback {
+        display: block;
+        padding: 0 1.1rem;
+      }
       p { font-size: 1rem; max-width: none; }
+      .cta-button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -173,18 +238,92 @@
       </div>
     </section>
 
-    <section class="survey-wrap" aria-label="Embedded survey">
-      <div class="survey-shell">
+    <section class="survey-wrap surveymonkey-embed" aria-label="Embedded survey">
+      <div class="survey-shell" id="surveyShell">
         <script>(function(t,e,s,n){var o,a,c;t.SMCX=t.SMCX||[],e.getElementById(n)||(o=e.getElementsByTagName(s),a=o[o.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=n,c.src="https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd1caHSCpdmdgZgGo5Fq6bqokdT_2BUqOLlFvtbD91pfGNh.js",a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>
         <a href="https://www.surveymonkey.com">Create your own user feedback survey</a>
       </div>
+
+      <div class="mobile-survey-fallback" aria-label="Mobile survey link">
+        <p>For the best mobile experience, the diagnostic opens in SurveyMonkey.</p>
+        <a class="cta-button" href="https://www.surveymonkey.com/r/CWVKFNZ" target="_blank" rel="noopener">Start the 7-minute diagnostic</a>
+      </div>
     </section>
 
-    <section class="intro" style="margin-top: 2.5rem;">
+    <section class="intro disclaimer-block">
       <div class="intro-copy">
         <p>This diagnostic does not constitute legal, tax, investment, estate-planning, or transaction advice. For those topics, specialist advisors should be involved.</p>
       </div>
     </section>
   </div>
+
+  <script>
+    (function () {
+      var resizeTimer = null;
+
+      function applyStyle(node, property, value) {
+        if (node.style[property] !== value) {
+          node.style[property] = value;
+        }
+      }
+
+      function resizeSurveyEmbed() {
+        var shell = document.getElementById('surveyShell') || document.querySelector('.survey-shell');
+        if (!shell) return;
+
+        var isMobile = window.matchMedia('(max-width: 700px)').matches;
+        var targetHeight = isMobile ? 6500 : 4200;
+
+        applyStyle(shell, 'overflow', 'visible');
+
+        var iframes = shell.querySelectorAll('iframe');
+        iframes.forEach(function (iframe) {
+          applyStyle(iframe, 'width', '100%');
+          applyStyle(iframe, 'maxWidth', '100%');
+          applyStyle(iframe, 'minHeight', targetHeight + 'px');
+          applyStyle(iframe, 'height', targetHeight + 'px');
+          applyStyle(iframe, 'border', '0px');
+          applyStyle(iframe, 'display', 'block');
+          applyStyle(iframe, 'overflow', 'visible');
+          iframe.setAttribute('scrolling', 'no');
+        });
+
+        var promoLinks = shell.querySelectorAll('a[href="https://www.surveymonkey.com"]');
+        promoLinks.forEach(function (link) {
+          applyStyle(link, 'display', 'none');
+        });
+
+        var injectedNodes = shell.querySelectorAll('[style]');
+        injectedNodes.forEach(function (node) {
+          applyStyle(node, 'maxWidth', '100%');
+          if (node.style.overflow) applyStyle(node, 'overflow', 'visible');
+          if (node.style.maxHeight) applyStyle(node, 'maxHeight', 'none');
+        });
+      }
+
+      function scheduleResize() {
+        if (resizeTimer) {
+          window.clearTimeout(resizeTimer);
+        }
+        resizeTimer = window.setTimeout(resizeSurveyEmbed, 50);
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        resizeSurveyEmbed();
+        setTimeout(resizeSurveyEmbed, 500);
+        setTimeout(resizeSurveyEmbed, 1500);
+        setTimeout(resizeSurveyEmbed, 3000);
+      });
+
+      window.addEventListener('load', resizeSurveyEmbed);
+      window.addEventListener('resize', scheduleResize);
+
+      var observerTarget = document.getElementById('surveyShell') || document.querySelector('.survey-shell');
+      if (observerTarget && window.MutationObserver) {
+        var observer = new MutationObserver(scheduleResize);
+        observer.observe(observerTarget, { childList: true, subtree: true });
+      }
+    })();
+  </script>
 </body>
 </html>

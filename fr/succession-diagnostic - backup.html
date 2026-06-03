@@ -327,18 +327,6 @@
       flex: 0 0 auto;
     }
 
-    .survey-button-source {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
     .sr-only {
       position: absolute;
       width: 1px;
@@ -572,35 +560,12 @@
         <p>Comprendre les vrais risques. Engager les bonnes conversations.<br />Construire une transition qui protège l’entreprise, la famille et l’héritage.</p>
       </div>
       <div class="cta-area">
-        <a class="cta-button" href="https://www.surveymonkey.com/r/CWVKFNZ" target="_blank" rel="noopener" data-survey-launch="fr">
+        <a class="cta-button" href="/en/succession-diagnostic-questionnaire.html" target="_blank" rel="noopener">
           <span>Commencer le diagnostic de 7 minutes</span>
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <div class="survey-button-source" aria-hidden="true">
-          <script>(function(t,e,s,o){var n,a,c;t.SMCX=t.SMCX||[],e.getElementById(o)||(n=e.getElementsByTagName(s),a=n[n.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=o,c.src="https://widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd1caHSCpdmdgZgGo5Fq6bqqbXk17e2ffMpMVHgi_2BpbKg.js",a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");</script>
-        </div>
       </div>
     </footer>
   </div>
-  <script>
-    (function () {
-      function findSurveyTrigger() {
-        var hiddenSource = document.querySelector('.survey-button-source');
-        if (!hiddenSource) return null;
-        return hiddenSource.querySelector('button, a, [role="button"], iframe');
-      }
-
-      document.addEventListener('click', function (event) {
-        var launchLink = event.target.closest('[data-survey-launch="fr"]');
-        if (!launchLink) return;
-
-        var trigger = findSurveyTrigger();
-        if (!trigger) return;
-
-        event.preventDefault();
-        trigger.click();
-      });
-    })();
-  </script>
 </body>
 </html>
