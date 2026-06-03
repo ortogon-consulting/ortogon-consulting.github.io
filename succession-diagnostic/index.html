@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="ynXQUQH43dRAFVs0KfqWtSZaECwuDFnvPJTBA1rJ4e0" />
 
-  <title>Succession Risk Snapshot | Ortogon</title>
+  <title>Family Business Succession Risk Snapshot | Ortogon</title>
 
-  <meta name="description" content="A 7-minute family business succession diagnostic from Ortogon to identify where governance, leadership, ownership, and continuity risks are most exposed." />
+  <meta name="description" content="A free 7-minute family business succession diagnostic from Ortogon to identify where governance, leadership, ownership, and continuity risks are most exposed." />
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
   <link rel="canonical" href="https://ortogon.ch/succession-diagnostic/" />
 
@@ -19,235 +19,572 @@
   <meta property="og:locale" content="en_CH" />
   <meta property="og:locale:alternate" content="fr_CH" />
   <meta property="og:site_name" content="Ortogon" />
-  <meta property="og:title" content="Succession Risk Snapshot | Ortogon" />
-  <meta property="og:description" content="A 7-minute family business succession diagnostic from Ortogon to identify where governance, leadership, ownership, and continuity risks are most exposed." />
+  <meta property="og:title" content="Family Business Succession Risk Snapshot | Ortogon" />
+  <meta property="og:description" content="A free 7-minute survey for family business owners, shareholders and boards." />
   <meta property="og:url" content="https://ortogon.ch/succession-diagnostic/" />
-  <meta property="og:image" content="https://ortogon.ch/portrait.jpg" />
+  <meta property="og:image" content="https://ortogon.ch/Succession%20Diagnostic%20(EN).png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Succession Risk Snapshot | Ortogon" />
-  <meta name="twitter:description" content="A 7-minute family business succession diagnostic from Ortogon to identify where governance, leadership, ownership, and continuity risks are most exposed." />
-  <meta name="twitter:image" content="https://ortogon.ch/portrait.jpg" />
+  <meta name="twitter:title" content="Family Business Succession Risk Snapshot | Ortogon" />
+  <meta name="twitter:description" content="Identify where your succession risk sits before it becomes a problem." />
+  <meta name="twitter:image" content="https://ortogon.ch/Succession%20Diagnostic%20(EN).png" />
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --ink: #111111; --muted: #5f5f5f; --soft: #8a8a8a; --rule: #e8e8e8; }
-    html { scroll-behavior: smooth; }
+
+    :root {
+      --ink: #ffffff;
+      --gold: #c99537;
+      --gold-soft: #e0b867;
+      --dark: #070b10;
+      --panel: rgba(7, 11, 16, 0.86);
+      --cream: #f6f1ea;
+      --paper: #f5f0e8;
+      --text-dark: #171717;
+      --muted-dark: #4a4a4a;
+      --line: rgba(255, 255, 255, 0.18);
+    }
+
+    html { min-height: 100%; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
-      background: #ffffff;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: var(--dark);
       color: var(--ink);
-      line-height: 1.7;
+      line-height: 1.45;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-    a {
-      color: var(--ink);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease, opacity 0.2s ease;
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      background-image:
+        linear-gradient(90deg, rgba(4, 8, 12, 0.92) 0%, rgba(4, 8, 12, 0.82) 26%, rgba(4, 8, 12, 0.34) 56%, rgba(4, 8, 12, 0.10) 100%),
+        linear-gradient(180deg, rgba(4, 8, 12, 0.10) 0%, rgba(4, 8, 12, 0.20) 72%, rgba(4, 8, 12, 0.65) 100%),
+        url("../Succession%20Diagnostic%20(EN).png");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
-    a:hover { border-bottom-color: var(--ink); }
-    a:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 3px;
-      border-bottom-color: transparent;
-    }
-    .page { min-height: 100vh; padding: 2rem 1.5rem 4rem; }
+
     .site-header {
-      max-width: 1040px;
-      margin: 0 auto 4rem;
+      position: relative;
+      z-index: 4;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 2rem;
+      padding: clamp(1rem, 1.8vw, 1.9rem) clamp(1.35rem, 3.2vw, 3.4rem) 0;
     }
-    .brand-block { display: flex; flex-direction: column; gap: 1rem; }
-    .brand-block img { width: 140px; height: auto; display: block; }
-    .brand-meta { display: flex; flex-direction: column; gap: 0.5rem; }
-    .back-link { font-size: 0.92rem; letter-spacing: 0.02em; color: var(--muted); width: fit-content; }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand img {
+      display: block;
+      width: clamp(170px, 18vw, 300px);
+      height: auto;
+      filter: brightness(0) invert(1);
+    }
+
     .lang-toggle {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-    }
-    .lang-toggle a { padding: 0.2rem 0; border-bottom-color: transparent; }
-    .lang-toggle a.active {
-      text-decoration: underline;
-      text-underline-offset: 0.18em;
+      gap: 0.55rem;
+      padding-top: 0.25rem;
+      color: #ffffff;
+      font-size: 0.88rem;
       font-weight: 600;
+      letter-spacing: 0.06em;
     }
-    .separator { color: var(--soft); }
-    .content { max-width: 720px; margin: 0 auto; }
+
+    .lang-toggle a {
+      border-bottom: 1px solid transparent;
+      opacity: 0.82;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+    }
+
+    .lang-toggle a:hover,
+    .lang-toggle a.active {
+      opacity: 1;
+      border-bottom-color: currentColor;
+    }
+
+    .lang-toggle span { opacity: 0.55; }
+
+    .hero {
+      position: relative;
+      z-index: 3;
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 58rem) 1fr;
+      align-items: start;
+      padding: clamp(1.15rem, 2.4vw, 2.4rem) clamp(1.35rem, 3.2vw, 3.4rem) clamp(0.45rem, 1.1vw, 1rem);
+    }
+
+    .hero-content {
+      max-width: 54rem;
+    }
+
     .eyebrow {
-      display: inline-block;
-      margin-bottom: 1rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
+      color: var(--gold-soft);
+      font-size: clamp(0.95rem, 1.5vw, 1.45rem);
+      font-weight: 700;
+      letter-spacing: 0.055em;
       text-transform: uppercase;
-      color: var(--soft);
+      margin-bottom: 0.9rem;
     }
+
     h1 {
-      font-size: clamp(2.35rem, 5vw, 3.4rem);
-      line-height: 1.12;
-      letter-spacing: -0.025em;
-      margin-bottom: 2rem;
-      max-width: 12ch;
+      max-width: 12.5ch;
+      color: #ffffff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 5.45vw, 5.45rem);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+      margin-bottom: 1.1rem;
+      text-shadow: 0 2px 22px rgba(0, 0, 0, 0.32);
     }
-    h2 {
-      font-size: 1.45rem;
-      line-height: 1.28;
-      letter-spacing: -0.015em;
-      color: var(--muted);
-      margin: 3rem 0 1rem;
+
+    .rule {
+      width: 5.4rem;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 0 1.05rem;
     }
-    p { font-size: 1.03rem; margin-bottom: 1rem; }
-    ul { margin: 1rem 0 1.5rem 1.25rem; padding: 0; }
-    li { margin-bottom: 0.55rem; padding-left: 0.2rem; }
-    .lede { font-size: 1.12rem; color: var(--muted); max-width: 58ch; }
-    .cta-block { margin: 2rem 0 2.5rem; padding: 1.6rem 0 0; }
+
+    .subhead {
+      max-width: 29rem;
+      color: var(--gold-soft);
+      font-size: clamp(1.18rem, 2vw, 1.55rem);
+      font-weight: 700;
+      line-height: 1.18;
+      margin-bottom: 0.75rem;
+    }
+
+    .intro {
+      max-width: 31rem;
+      color: #ffffff;
+      font-size: clamp(1rem, 1.35vw, 1.22rem);
+      line-height: 1.34;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.38);
+    }
+
+    .intro strong {
+      color: var(--gold-soft);
+      font-weight: 500;
+    }
+
+    .intro-break {
+      display: block;
+      margin-top: 0.42rem;
+    }
+
+    .snapshot-panel {
+      position: relative;
+      z-index: 5;
+      width: min(51rem, calc(100vw - 2.7rem));
+      margin: 0 0 0 clamp(1.35rem, 3.2vw, 3.4rem);
+      padding: 0.7rem 1rem 0.8rem;
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+    }
+
+    .snapshot-title {
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.085em;
+      text-transform: uppercase;
+      margin: 0 0 0.55rem;
+    }
+
+    .snapshot-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+    }
+
+    .snapshot-item {
+      min-height: 4.8rem;
+      padding: 0.2rem 0.65rem 0;
+      border-left: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      gap: 0.38rem;
+    }
+
+    .snapshot-item:first-child { border-left: 0; }
+
+    .snapshot-icon {
+      width: 2rem;
+      height: 2rem;
+      color: var(--gold-soft);
+      margin-bottom: 0.15rem;
+    }
+
+    .snapshot-item p {
+      color: #ffffff;
+      font-size: clamp(0.75rem, 1vw, 0.92rem);
+      line-height: 1.14;
+    }
+
+    .bottom-bar {
+      position: relative;
+      z-index: 6;
+      display: grid;
+      grid-template-columns: minmax(15rem, 1fr) minmax(22rem, 1.2fr) minmax(19rem, 0.9fr);
+      gap: 0;
+      align-items: stretch;
+      min-height: 5.8rem;
+      margin-top: 0;
+      background: rgba(246, 241, 234, 0.97);
+      color: var(--text-dark);
+      box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .assurance,
+    .promise {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 0.8rem clamp(1rem, 2.5vw, 2.5rem);
+    }
+
+    .assurance {
+      border-right: 1px solid rgba(0, 0, 0, 0.22);
+    }
+
+    .assurance svg {
+      flex: 0 0 2.55rem;
+      width: 2.55rem;
+      height: 2.55rem;
+      color: var(--text-dark);
+    }
+
+    .assurance strong {
+      display: block;
+      font-size: 1.02rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .assurance span,
+    .promise p {
+      color: var(--text-dark);
+      font-size: 0.95rem;
+      line-height: 1.32;
+    }
+
+    .cta-area {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.8rem clamp(1.1rem, 2vw, 2.2rem);
+    }
+
     .cta-button {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0.9rem 1.4rem;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 0.98rem;
-      letter-spacing: 0.01em;
-      text-align: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      min-height: 3.25rem;
+      padding: 0.72rem 1.35rem;
+      background: var(--gold);
+      color: #111111;
+      border-radius: 2px;
+      font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease;
     }
-    .cta-button:hover { opacity: 0.88; border-bottom-color: var(--ink); }
-    .disclaimer { margin-top: 3.5rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); }
-    .disclaimer p:last-child, .content p:last-child { margin-bottom: 0; }
-    @media (max-width: 700px) {
-      .page { padding: 1.25rem 1.1rem 3rem; }
-      .site-header {
-        margin-bottom: 3rem;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.25rem;
+
+    .cta-button:hover {
+      transform: translateY(-1px);
+      background: #d2a247;
+    }
+
+    .cta-button svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      flex: 0 0 auto;
+    }
+
+    .secure-note {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.45rem;
+      color: var(--text-dark);
+      font-size: 0.82rem;
+      line-height: 1.2;
+    }
+
+    .secure-note svg {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (min-width: 1101px) and (max-height: 820px) {
+      .page {
+        height: 100dvh;
+        min-height: 100dvh;
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr) auto auto;
       }
-      .brand-block img { width: 124px; }
-      .lang-toggle { font-size: 0.82rem; }
-      p, li { font-size: 1rem; }
+
+      .site-header { padding-top: 1.05rem; }
+      .brand img { width: clamp(165px, 16vw, 250px); }
+      .hero { align-items: center; padding-top: 1.05rem; padding-bottom: 0.45rem; }
+      .eyebrow { font-size: clamp(0.9rem, 1.15vw, 1.18rem); margin-bottom: 0.65rem; }
+      h1 { font-size: clamp(3rem, 4.7vw, 4.75rem); line-height: 0.96; margin-bottom: 0.9rem; }
+      .rule { width: 4.6rem; margin-bottom: 0.85rem; }
+      .subhead { font-size: clamp(1.05rem, 1.55vw, 1.32rem); margin-bottom: 0.65rem; }
+      .intro { font-size: clamp(0.94rem, 1.05vw, 1.08rem); line-height: 1.28; }
+      .snapshot-panel { width: min(47rem, calc(100vw - 2.7rem)); padding-top: 0.55rem; padding-bottom: 0.65rem; }
+      .snapshot-title { font-size: 0.82rem; margin-bottom: 0.42rem; }
+      .snapshot-item { min-height: 4.15rem; gap: 0.2rem; }
+      .snapshot-icon { width: 1.7rem; height: 1.7rem; margin-bottom: 0; }
+      .snapshot-item p { font-size: 0.76rem; line-height: 1.08; }
+      .bottom-bar { min-height: 5.3rem; }
+      .assurance,
+      .promise { padding-top: 0.65rem; padding-bottom: 0.65rem; }
+      .assurance svg { flex-basis: 2.25rem; width: 2.25rem; height: 2.25rem; }
+      .assurance strong { font-size: 0.95rem; }
+      .assurance span,
+      .promise p { font-size: 0.82rem; line-height: 1.25; }
+      .cta-area { padding-top: 0.55rem; padding-bottom: 0.55rem; }
+      .cta-button { min-height: 3rem; font-size: clamp(0.88rem, 1.1vw, 1.05rem); }
+      .secure-note { margin-top: 0.32rem; font-size: 0.72rem; }
+    }
+
+    @media (min-width: 1101px) {
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .page {
+        height: 100vh;
+        min-height: 650px;
+        display: block;
+        overflow: hidden;
+      }
+
+      .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding-top: clamp(0.95rem, 1.55vw, 1.65rem);
+      }
+
+      .brand img { width: clamp(160px, 15.5vw, 255px); }
+
+      .hero {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: clamp(5.45rem, 8.7vw, 8.25rem);
+        bottom: 13.6rem;
+        display: block;
+        padding: 0 clamp(1.35rem, 3.2vw, 3.4rem);
+      }
+
+      .hero-content { max-width: min(48rem, 47vw); }
+      .eyebrow { font-size: clamp(0.9rem, 1.18vw, 1.18rem); margin-bottom: clamp(0.45rem, 0.8vw, 0.7rem); }
+      h1 { font-size: clamp(3.15rem, 4.45vw, 4.55rem); line-height: 0.94; margin-bottom: clamp(0.65rem, 0.95vw, 0.95rem); }
+      .rule { width: 4.55rem; margin-bottom: clamp(0.65rem, 0.9vw, 0.85rem); }
+      .subhead { max-width: 28rem; font-size: clamp(1.02rem, 1.45vw, 1.28rem); line-height: 1.14; margin-bottom: clamp(0.5rem, 0.7vw, 0.65rem); }
+      .intro { max-width: 30rem; font-size: clamp(0.9rem, 1vw, 1.04rem); line-height: 1.25; }
+
+      .snapshot-panel {
+        position: absolute;
+        left: clamp(1.35rem, 3.2vw, 3.4rem);
+        bottom: 5.55rem;
+        width: min(47rem, 51vw);
+        margin: 0;
+        padding: 0.78rem 1.05rem 0.92rem;
+      }
+
+      .snapshot-title { font-size: clamp(0.8rem, 0.95vw, 0.96rem); margin-bottom: 0.62rem; }
+      .snapshot-grid { align-items: stretch; }
+      .snapshot-item { min-height: 4.9rem; padding: 0.18rem 0.62rem 0; gap: 0.22rem; }
+      .snapshot-icon { width: clamp(1.55rem, 1.85vw, 1.95rem); height: clamp(1.55rem, 1.85vw, 1.95rem); margin-bottom: 0.04rem; }
+      .snapshot-item p { font-size: clamp(0.68rem, 0.86vw, 0.84rem); line-height: 1.08; }
+
+      .bottom-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        min-height: 5.15rem;
+        height: 5.15rem;
+        grid-template-columns: minmax(18rem, 1.06fr) minmax(22rem, 1.28fr) minmax(21rem, 1fr);
+      }
+
+      .assurance,
+      .promise { padding-top: 0.55rem; padding-bottom: 0.55rem; }
+      .assurance svg { flex-basis: 2.15rem; width: 2.15rem; height: 2.15rem; }
+      .assurance strong { font-size: 0.9rem; }
+      .assurance span,
+      .promise p { font-size: 0.76rem; line-height: 1.22; }
+      .cta-area { padding-top: 0.48rem; padding-bottom: 0.42rem; }
+      .cta-button { min-height: 2.85rem; padding: 0.62rem 1.15rem; font-size: clamp(0.82rem, 1.03vw, 1.02rem); }
+      .secure-note { margin-top: 0.28rem; font-size: 0.66rem; }
+    }
+
+    @media (min-width: 1101px) and (max-height: 720px) {
+      .page { min-height: 590px; }
+      .brand img { width: clamp(140px, 13.5vw, 215px); }
+      .hero { top: 4.85rem; bottom: 12.5rem; }
+      h1 { font-size: clamp(2.7rem, 3.85vw, 3.8rem); }
+      .subhead { font-size: clamp(0.96rem, 1.24vw, 1.12rem); }
+      .intro { font-size: clamp(0.84rem, 0.92vw, 0.95rem); }
+      .bottom-bar { height: 4.75rem; min-height: 4.75rem; }
+      .snapshot-panel { bottom: 5.08rem; width: min(43.5rem, 49vw); padding: 0.55rem 0.85rem 0.68rem; }
+      .snapshot-title { font-size: 0.74rem; margin-bottom: 0.42rem; }
+      .snapshot-icon { width: 1.35rem; height: 1.35rem; }
+      .snapshot-item { min-height: 3.75rem; padding-left: 0.45rem; padding-right: 0.45rem; gap: 0.12rem; }
+      .snapshot-item p { font-size: 0.62rem; line-height: 1.04; }
+      .assurance span, .promise p { font-size: 0.7rem; }
+      .cta-button { min-height: 2.55rem; font-size: 0.82rem; }
+      .secure-note { font-size: 0.62rem; }
+    }
+
+    @media (max-width: 1100px) {
+      .hero { grid-template-columns: 1fr; }
+      .snapshot-panel { width: min(58rem, calc(100vw - 2.7rem)); }
+      .bottom-bar { grid-template-columns: 1fr; }
+      .assurance { border-right: 0; border-bottom: 1px solid rgba(0, 0, 0, 0.16); }
+      .promise { border-bottom: 1px solid rgba(0, 0, 0, 0.16); }
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        min-height: 100vh;
+        overflow: visible;
+        background-image:
+          linear-gradient(180deg, rgba(4, 8, 12, 0.93) 0%, rgba(4, 8, 12, 0.88) 45%, rgba(4, 8, 12, 0.72) 100%),
+          url("../Succession%20Diagnostic%20(EN).png");
+        background-position: 63% center;
+      }
+
+      .site-header { padding: 1.25rem 1.15rem 0; align-items: flex-start; }
+      .brand img { width: 165px; }
+      .lang-toggle { font-size: 0.8rem; }
+      .hero { padding: 3rem 1.15rem 1.6rem; }
+      h1 { max-width: 10.8ch; font-size: clamp(3.05rem, 13vw, 4.3rem); }
+      .subhead, .intro { max-width: 100%; }
+      .snapshot-panel { width: calc(100vw - 2.3rem); margin: 0 1.15rem 1.1rem; }
+      .snapshot-grid { grid-template-columns: repeat(2, 1fr); row-gap: 0.7rem; }
+      .snapshot-item:nth-child(odd) { border-left: 0; }
+      .snapshot-item { min-height: auto; }
+      .assurance, .promise, .cta-area { padding-left: 1.15rem; padding-right: 1.15rem; }
+      .promise p { font-size: 0.93rem; }
     }
   </style>
 </head>
 <body>
   <div class="page">
     <header class="site-header">
-      <div class="brand-block">
-        <a href="/en/" aria-label="Back to Ortogon home">
-          <img src="../logo.png" alt="Ortogon" />
-        </a>
-        <div class="brand-meta">
-          <a class="back-link" href="/en/">Back to Ortogon</a>
-        </div>
-      </div>
+      <a class="brand" href="/en/" aria-label="Back to Ortogon home">
+        <img src="../logo.png" alt="Ortogon" />
+      </a>
 
       <nav class="lang-toggle" aria-label="Language selector">
         <a class="active" href="/succession-diagnostic/" aria-current="page">EN</a>
-        <span class="separator">/</span>
+        <span>/</span>
         <a href="/fr/succession-diagnostic.html" lang="fr">FR</a>
       </nav>
     </header>
 
-    <main class="content">
-      <span class="eyebrow">Family Business Succession</span>
-      <h1>Succession Risk Snapshot</h1>
-      <section aria-labelledby="where-breaks-first">
-        <h2 id="where-breaks-first">Identify where your family business succession could break first.</h2>
-        <p class="lede">Most succession failures do not begin with tax, legal, or valuation problems.</p>
-        <p>They begin earlier when families confuse love, ownership, competence, control, and fairness.</p>
-        <p>A child can be loved equally without being equally suited to lead.</p>
-        <p>A shareholder can have economic rights without having operational authority.</p>
-        <p>A founder can want succession while remaining the central decision bottleneck.</p>
-        <p>Fairness does not always mean identical treatment.</p>
-        <p>The question is not only who will succeed.</p>
-        <p>The question is whether the family, the ownership structure, the governance system, and the business itself are ready for the transfer of power.</p>
-      </section>
-
-      <section aria-labelledby="diagnostic">
-        <h2 id="diagnostic">A 7-minute diagnostic for family business owners</h2>
-        <p>The Family Business Succession Risk Snapshot helps identify where succession risk is currently concentrated.</p>
-        <p>It assesses eight critical dimensions:</p>
-        <ul>
-          <li>Strategic continuity</li>
-          <li>Leadership succession</li>
-          <li>Ownership and control</li>
-          <li>Governance and decision-making</li>
-          <li>Founder readiness</li>
-          <li>Family alignment</li>
-          <li>Fairness versus equality</li>
-          <li>Emergency continuity</li>
-        </ul>
-        <p>The result is not a generic score. It is a structured view of where the succession process is most exposed.</p>
-      </section>
-
-      <section aria-labelledby="clarify">
-        <h2 id="clarify">What the diagnostic helps clarify</h2>
-        <p>The questionnaire is designed to surface questions such as:</p>
-        <ul>
-          <li>Is there a credible future leader?</li>
-          <li>Is the business too dependent on the current owner-manager?</li>
-          <li>Are ownership, control, and operational roles clearly separated?</li>
-          <li>Can sensitive topics such as money, competence, inheritance, dividends, or valuation be discussed openly?</li>
-          <li>Could the company operate for 90 days if the current leader suddenly became unavailable?</li>
-          <li>Is keeping the business the best option, or should sale, merger, or professional management be considered?</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="receive">
-        <h2 id="receive">What you receive</h2>
-        <p>After completing the diagnostic, you may request a short interpretation of your responses.</p>
-        <p>The Succession Risk Snapshot can include:</p>
-        <ul>
-          <li>An overall succession clarity assessment</li>
-          <li>A heatmap of the main risk areas</li>
-          <li>The three most important vulnerabilities</li>
-          <li>Selected red flags</li>
-          <li>A short interpretation of the avoided conversations</li>
-          <li>Recommended next steps</li>
-          <li>A suggested agenda for a confidential advisory discussion</li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="who-for">
-        <h2 id="who-for">Who this is for</h2>
-        <p>This diagnostic is intended for:</p>
-        <ul>
-          <li>Founders and owner-managers</li>
-          <li>Next-generation family members</li>
-          <li>Family shareholders</li>
-          <li>Boards of family-owned companies</li>
-          <li>Families considering succession, professionalisation, sale, or transition</li>
-        </ul>
-        <p>It is particularly relevant when succession has been discussed informally but not yet translated into a clear governance and transition architecture.</p>
-      </section>
-
-      <section aria-labelledby="start">
-        <h2 id="start">Start the diagnostic</h2>
-        <p>The questionnaire takes approximately 7 minutes.</p>
-        <div class="cta-block">
-          <a class="cta-button" href="/en/succession-diagnostic-questionnaire.html" target="_blank" rel="noopener">Start the 7-minute diagnostic</a>
-        </div>
-      </section>
-
-      <section class="disclaimer" aria-labelledby="confidentiality">
-        <h2 id="confidentiality">Confidentiality and disclaimer</h2>
-        <p>Your responses are used to prepare an indicative succession risk interpretation. The diagnostic does not constitute legal, tax, investment, estate-planning, or transaction advice.</p>
-        <p>For those topics, specialist advisors should be involved.</p>
-        <p>Ortogon’s role is to help clarify the strategic, governance, ownership, and decision-making architecture required for a successful transition.</p>
-      </section>
+    <main class="hero" aria-labelledby="page-title">
+      <div class="hero-content">
+        <p class="eyebrow">Family Business Succession Survey</p>
+        <h1 id="page-title">Identify where your succession risk sits before it becomes a problem.</h1>
+        <div class="rule" aria-hidden="true"></div>
+        <p class="subhead">A free 7-minute survey for family business owners, shareholders and boards.</p>
+        <p class="intro">Most succession failures don’t start with tax, legal or valuation issues.<span class="intro-break">They start when families confuse <strong>love, ownership, competence, control</strong> and <strong>fairness</strong>.</span></p>
+      </div>
     </main>
+
+    <section class="snapshot-panel" aria-labelledby="snapshot-includes">
+      <h2 class="snapshot-title" id="snapshot-includes">Your Succession Risk Snapshot includes:</h2>
+      <div class="snapshot-grid">
+        <div class="snapshot-item">
+          <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 40V26h6v14H8Zm13 0V16h6v24h-6Zm13 0V8h6v32h-6Z" stroke="currentColor" stroke-width="2.4"/></svg>
+          <p>Overall Succession Clarity Score</p>
+        </div>
+        <div class="snapshot-item">
+          <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2.4"/><rect x="29" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2.4"/><rect x="8" y="29" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2.4"/><rect x="29" y="29" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2.4"/></svg>
+          <p>Risk heatmap across key dimensions</p>
+        </div>
+        <div class="snapshot-item">
+          <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 8 43 40H5L24 8Z" stroke="currentColor" stroke-width="2.4"/><path d="M24 18v11" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="35" r="1.6" fill="currentColor"/></svg>
+          <p>Top 3 vulnerabilities and red flags</p>
+        </div>
+        <div class="snapshot-item">
+          <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M10 14c0-4 4.2-7 14-7s14 3 14 11c0 7.5-5.8 11-14 11h-4l-8 6 2-8c-2.7-2.2-4-5.2-4-9Z" stroke="currentColor" stroke-width="2.4"/><path d="M18 18h.1M24 18h.1M30 18h.1" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          <p>Insight into the avoided conversation</p>
+        </div>
+        <div class="snapshot-item">
+          <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M16 8h16l3 5h5v29H8V13h5l3-5Z" stroke="currentColor" stroke-width="2.4"/><path d="M17 24l4 4 9-10M17 35l4 4 9-10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <p>Recommended next steps</p>
+        </div>
+        <div class="snapshot-item">
+          <svg class="snapshot-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="9" y="10" width="30" height="30" rx="2" stroke="currentColor" stroke-width="2.4"/><path d="M16 6v8M32 6v8M9 18h30" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M17 25h3M23 25h3M29 25h3M17 32h3M23 32h3M29 32h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <p>Suggested agenda for a confidential discussion</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bottom-bar">
+      <div class="assurance">
+        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 5 41 12v12c0 10.8-7.2 16.7-17 20-9.8-3.3-17-9.2-17-20V12l17-7Z" stroke="currentColor" stroke-width="2.3"/><rect x="17" y="22" width="14" height="11" rx="1.5" stroke="currentColor" stroke-width="2.3"/><path d="M20 22v-4a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2.3"/></svg>
+        <p><strong>Confidential. No commitment.</strong><span>Indicative only and not legal, tax, investment, or estate-planning advice.</span></p>
+      </div>
+      <div class="promise">
+        <p>Understand the real risks. Start the right conversations.<br />Design a transition that protects your business, your family and your legacy.</p>
+      </div>
+      <div class="cta-area">
+        <a class="cta-button" href="/en/succession-diagnostic-questionnaire.html" target="_blank" rel="noopener">
+          <span>Start the 7-minute survey</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
