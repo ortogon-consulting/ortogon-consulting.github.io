@@ -18,8 +18,8 @@ const paths = {
     tempDir: path.join(__dirname, ".tmp"),
     tempHtml: path.join(__dirname, ".tmp", "index.html"),
     tempTemplate: path.join(__dirname, ".tmp", "password_template.html"),
-    outputDir: path.join(repoRoot, "thelearninglab", "framing"),
-    outputHtml: path.join(repoRoot, "thelearninglab", "framing", "index.html"),
+    outputDir: path.join(repoRoot, "thelearninglab", "approach"),
+    outputHtml: path.join(repoRoot, "thelearninglab", "approach", "index.html"),
 };
 
 const forbiddenPlaintextPhrases = [

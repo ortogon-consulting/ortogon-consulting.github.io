@@ -14,7 +14,7 @@ npm run build
 
 The only deployable presentation artifact is:
 
-`../../thelearninglab/framing/index.html`
+`../../thelearninglab/approach/index.html`
 
 Preview from the repository root over localhost, not `file://`:
 
@@ -25,7 +25,7 @@ python -m http.server 8000
 
 Then open:
 
-`http://localhost:8000/thelearninglab/framing/`
+`http://localhost:8000/thelearninglab/approach/`
 
 To update the presentation later:
 
