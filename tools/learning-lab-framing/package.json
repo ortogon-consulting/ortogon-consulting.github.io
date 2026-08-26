@@ -1,0 +1,13 @@
+{
+  "name": "learning-lab-framing-build",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Build tooling for the encrypted Learning Lab framing page.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "mime-types": "^2.1.35",
+    "staticrypt": "3.5.4"
+  }
+}
